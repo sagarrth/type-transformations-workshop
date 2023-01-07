@@ -1,6 +1,6 @@
 import { Equal, Expect } from "../helpers/type-utils";
-
-type CreateDataShape<TData, TError> = {
+// this focuses on the default type provided for generics
+type CreateDataShape<TData, TError = undefined> = {
   data: TData;
   error: TError;
 };
