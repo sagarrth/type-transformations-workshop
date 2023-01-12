@@ -8,7 +8,12 @@ type Names = [
   "BB King",
 ];
 
-type GetSurname<T> = unknown;
+type GetSurname<T> = T extends `${any} ${infer V}` ? V : never;
+
+/**
+ * Takeaway from this exercise is infer can be applied on strings through template literals
+ * and then inferring the value required
+ */
 
 type tests = [
   Expect<Equal<GetSurname<Names[0]>, "Pocock">>,
